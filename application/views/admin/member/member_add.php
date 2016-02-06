@@ -51,9 +51,7 @@ if (isset($member)) {
                     <input type="hidden" name="member_id" value="<?php echo $member['member_id'] ?>" />
                     <input type="hidden" name="member_input_date" value="<?php echo $member['member_input_date'] ?>" />
                     <input type="hidden" name="member_nip" value="<?php echo $member['member_nip'] ?>" />
-                <?php endif; ?>
-                <label >NIPM *</label>
-                <input type="text" name="member_nip" <?php echo $member['member_nip'] ? 'readonly' : '' ?> placeholder="NIPM" class="form-control" value="<?php echo $member['member_nip'] ?>"><br>
+                <?php endif; ?>                
                 <label >Nama Lengkap *</label>
                 <input type="text" name="member_full_name" placeholder="Nama Lengkap" class="form-control" value="<?php echo $inputFullName; ?>"><br>
                 <label >Username *</label>
