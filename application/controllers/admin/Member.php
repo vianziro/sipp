@@ -34,7 +34,7 @@ class Member extends CI_Controller {
         $params = array();
         // Nip
         if (isset($f['n']) && !empty($f['n']) && $f['n'] != '') {
-            $params['member_nip'] = $f['n'];
+            $params['member_full_name'] = $f['n'];
         }
 
         $paramsPage = $params;
@@ -242,7 +242,7 @@ function report($id = NULL) {
 
 public function export() {
         $this->load->helper('csv');
-       
+        $params = array();
         $data['member'] = $this->Member_model->get($params);
         $csv = array(
             0 => array(
@@ -255,10 +255,16 @@ public function export() {
             $csv[] = array( $i,
                 $row['member_nip'], $row['member_full_name'], $row['member_sex'] == 'MALE' ? 'Laki-laki' : 'Perempuan', $row['member_birth_place'], $row['member_birth_date'],
 				$row['member_school'], $row['member_mentor'], $row['member_phone'], $row['member_address'], $row['member_division'], $row['member_status'] == 0 ? 'Non-Aktif' : 'Aktif',
-                pretty_date($row['member_input_date'], 'm/d/Y', FALSE)
+                pretty_date($row['member_entry_date'], 'm/d/Y', FALSE)
             );
             $i++;
         }
+
+       // echo "<pre>";
+        // echo print_r($csv);
+        // echo "</pre>";
+        // die();
+
         array_to_csv($csv, 'Data_Peserta_Prakerin.csv');
     }
 
