@@ -44,7 +44,7 @@
                     <tr>
                         <td><span class="style3">Periode</span></td>
                         <td><span class="style3">:</span></td>
-                        <td><span class="style3"><?php echo pretty_date( $member['member_input_date'],'d F Y',false) ?> s/d <?php echo pretty_date( $member['member_last_update'],'d F Y',false) ?></span></td>
+                        <td><span class="style3"><?php echo pretty_date( $member['member_entry_date'],'d F Y',false) ?> s/d <?php echo pretty_date( $member['member_end_date'],'d F Y',false) ?></span></td>
                     </tr>                    
                 </tbody>
             </table>            
