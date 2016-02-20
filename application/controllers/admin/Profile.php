@@ -80,7 +80,7 @@ class Profile extends CI_Controller {
     }
 
     function cpw($id = NULL) {
-        $this->load->library('form_validation');
+        $this->load->library('form_validation'); 
         $this->form_validation->set_rules('user_password', 'Password', 'trim|required|xss_clean|min_length[6]');
         $this->form_validation->set_rules('passconf', 'Password Confirmation', 'trim|required|xss_clean|min_length[6]|matches[user_password]');
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>', '</div>');

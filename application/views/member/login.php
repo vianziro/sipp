@@ -235,52 +235,6 @@
 </script>
 <?php } ?>
 
-<script language="JavaScript">
-
-
-var countDownInterval=30;
-//configure width of displayed text, in px (applicable only in NS4)
-var c_reloadwidth=200
-
-</script>
-
-
-<ilayer id="c_reload" width=&{c_reloadwidth}; ><layer id="c_reload2" width=&{c_reloadwidth}; left=0 top=0></layer></ilayer>
-
-<script>
-
-var countDownTime=countDownInterval+1;
-function countDown(){
-countDownTime--;
-if (countDownTime <=0){
-countDownTime=countDownInterval;
-clearTimeout(counter)
-window.location.reload()
-return
-}
-if (document.all) //if IE 4+
-document.all.countDownText.innerText = countDownTime+" ";
-else if (document.getElementById) //else if NS6+
-document.getElementById("countDownText").innerHTML=countDownTime+" "
-else if (document.layers){ //CHANGE TEXT BELOW TO YOUR OWN
-document.c_reload.document.c_reload2.document.write('Auto <a href="javascript:window.location.reload()">refresh</a> in <b id="countDownText">'+countDownTime+' </b> seconds')
-document.c_reload.document.c_reload2.document.close()
-}
-counter=setTimeout("countDown()", 1000);
-}
-
-function startit(){
-if (document.all||document.getElementById) //CHANGE TEXT BELOW TO YOUR OWN
-document.write('Auto <a href="javascript:window.location.reload()">refresh</a> in <b id="countDownText">'+countDownTime+' </b> seconds')
-countDown()
-}
-
-if (document.all||document.getElementById)
-startit()
-else
-window.onload=startit
-
-</script>
 
 </head>
 
@@ -329,9 +283,9 @@ window.onload=startit
                     <table class="table table-striped tbl-present">
                         <thead class="thead-present">
                             <tr class="tr-present">
-                                <th class="col-no">No.</th>
-                                <th class="col-date">Tanggal</th>
-                                <th class="col-name">Nama</th>
+                                <th class="col-no">No.</th> 
+                                <th class="col-ket">  </th>                               
+                                <th class="col-name">Nama</th>                                
                                 <th class="col-ket">Datang</th>
                                 <th class="col-ket">Pulang</th>
                                 <th class="col-ket">Kehadiran</th>
@@ -345,9 +299,9 @@ window.onload=startit
                                 foreach ($present as $row):
                                     ?>
                                 <tr class="tr-present">
-                                    <td  class="col-no"><?php echo $i ?></td>
-                                    <td class="col-date"><?php echo pretty_date($row['present_date'], 'l, d m Y', FALSE) ?></td>
-                                    <td class="col-name"><?php echo $row['member_full_name'] ?></td>
+                                    <td  class="col-no"><?php echo $i ?></td> 
+                                    <td class="col-ket"> <img width="50" height="50" src="<?php echo upload_url('member_photo/'.  pretty_date($row['member_input_date'], 'Y/m/d/', FALSE).$row['member_image']) ?>"></td>                                   
+                                    <td class="col-name"><strong><?php echo $row['member_full_name'] ?></strong></td>                                    
                                     <td class="col-ket"><?php echo ($row['present_entry_time'] == NULL) ? '-' : $row['present_entry_time'] ?></td>
                                     <td class="col-ket"><?php echo ($row['present_out_time'] == NULL) ? '-' : $row['present_out_time'] ?></td>
                                     <td class="col-ket"><?php echo $row['present_desc'] ?></td>
@@ -597,7 +551,7 @@ window.onload=startit
                                     <center>
                                         <p class="text-footer">
                                           <ul>
-                                            Copyright &copy <?php echo pretty_date(date('Y-m-d'), 'Y',FALSE) ?> | Web Development by Achyar Anshorie&trade;
+                                            &copy; Copyright <?php echo pretty_date(date('Y-m-d'), 'Y',FALSE) ?> | Web Dev and Designer by Achyar Anshorie&trade;
                                         </ul>
                                     </p>
                                 </center>

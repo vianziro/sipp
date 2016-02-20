@@ -68,7 +68,7 @@ class Present_model extends CI_Model {
 
         $this->db->select('present.present_id, present_year, present_month, present_date,
             present_entry_time, present_out_time, present_desc, present_is_late, present_is_before, 
-            member_member_id, member_member_nip, member.member_full_name');
+            member_member_id, member_member_nip, member.member_full_name, member_image, member_input_date');
         $this->db->join('member', 'member.member_id = present.member_member_id', 'left');
         $res = $this->db->get('present');
 

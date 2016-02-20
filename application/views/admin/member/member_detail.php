@@ -89,7 +89,7 @@
                     <tr>
                         <td>Selesai Prakerin</td>
                         <td>:</td>
-                        <td><?php echo pretty_date($member['member_end_date'] == NULL ) ? '-' : pretty_date($member['member_end_date'], 'l, d M Y', FALSE) ?></td>
+                        <td><?php echo pretty_date($member['member_end_date'], 'l, d F Y', FALSE == NULL) ? '-' : pretty_date($member['member_end_date'], 'l, d F Y', FALSE) ?></td>
                     </tr>
                     <tr>
                         <td>Penilaian Predikat</td>

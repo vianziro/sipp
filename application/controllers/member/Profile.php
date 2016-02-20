@@ -60,6 +60,7 @@ class Profile extends CI_Controller {
             $params['member_phone'] = $this->input->post('member_phone');
             $params['member_address'] = $this->input->post('member_address');
             $params['member_mentor'] = $this->input->post('member_mentor');
+            $params['member_entry_date'] = $this->input->post('member_entry_date');
             $params['member_division'] = $this->input->post('member_division');
             $status = $this->Member_model->add($params);
 
@@ -120,12 +121,12 @@ class Profile extends CI_Controller {
 
     function cpw($id = NULL) {
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('member_password', 'Password', 'trim|required|xss_clean|min_length[6]');
-        $this->form_validation->set_rules('passconf', 'Password Confirmation', 'trim|required|xss_clean|min_length[6]|matches[member_password]');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|min_length[6]');
+        $this->form_validation->set_rules('passconf', 'Password Confirmation', 'trim|required|xss_clean|min_length[6]|matches[password]');
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>', '</div>');
         if ($_POST AND $this->form_validation->run() == TRUE) {
             $id = $this->input->post('member_id');
-            $params['member_password'] = sha1($this->input->post('member_password'));
+            $params['password'] = sha1($this->input->post('password'));
             $status = $this->Member_model->change_password($id, $params);
 
             $this->session->set_flashdata('success', 'Ubah Password Berhasil');

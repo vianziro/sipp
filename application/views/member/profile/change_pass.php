@@ -3,12 +3,18 @@
         <?php echo form_open(current_url()); ?>
         <?php echo validation_errors(); ?>
         <div class="form-group">
+            <?php if ($this->uri->segment(3) == 'cpw') { ?>
+                <label >Password Lama *</label>
+                <input type="password" name="member_current_password" class="form-control" placeholder="Password Lama">
+            <?php } ?>
+        </div>
+        <div class="form-group">
             <label >Password Baru *</label>
-            <input type="password" name="user_password" class="form-control" placeholder="Password Baru">
+            <input type="password" name="password" class="form-control" placeholder="Password Baru">
             <?php if ($this->uri->segment(3) == 'cpw') { ?>
                 <input type="hidden" name="member_id" value="<?php echo $this->session->userdata('member_id'); ?>" >
             <?php } else { ?>
-                <input type="hidden" name="member_id" value="<?php echo $user['member_id'] ?>" >
+                <input type="hidden" name="member_id" value="<?php echo $member['member_id'] ?>" >
             <?php } ?>
         </div>
         <div class="form-group">
