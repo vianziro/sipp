@@ -64,6 +64,7 @@ class Auth extends CI_Controller {
             $params['member_address'] = $this->input->post('member_address');
             $params['member_mentor'] = $this->input->post('member_mentor');
             $params['member_division'] = $this->input->post('member_division');
+            $params['member_entry_date'] = $this->input->post('member_entry_date');
             $status = $this->Member_model->add($params);
 
             if (!empty($_FILES['member_image']['name'])) {
@@ -205,7 +206,7 @@ class Auth extends CI_Controller {
         if ($this->session->userdata('logged_member')) {
             redirect('member');
         }
-        $this->form_validation->set_rules('username', 'Username', 'trim|required');
+        $this->form_validation->set_rules('member_nip', 'Username', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
         $data['posts'] = $this->Posts_model->get(array('limit' => 3, 'status' => TRUE));
         $data['present'] = $this->Present_model->get(array('date' => date('Y-m-d')));
@@ -225,14 +226,14 @@ class Auth extends CI_Controller {
     // Login Prosessing
     function process_login($lokasi = '') {
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('username', 'Username', 'required');
+        $this->form_validation->set_rules('member_nip', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
 
         if ($this->form_validation->run() == TRUE) {
-            $username = $this->input->post('username', TRUE);
+            $username = $this->input->post('member_nip', TRUE);
             $password = $this->input->post('password', TRUE);
             $this->db->from('member');
-            $this->db->where('username', $username);
+            $this->db->where('member_nip', $username);
             $this->db->where('password', sha1($password));
             $this->db->where('member_status', TRUE);
             $query = $this->db->get();
@@ -240,7 +241,7 @@ class Auth extends CI_Controller {
             if ($query->num_rows() > 0) {
                 $this->session->set_userdata('logged_member', TRUE);
                 $this->session->set_userdata('member_id', $query->row('member_id'));
-                $this->session->set_userdata('member_name', $query->row('username'));
+                $this->session->set_userdata('member_name', $query->row('member_nip'));
                 $this->session->set_userdata('member_full_name', $query->row('member_full_name'));
                 if ($lokasi != '') {
                     header("Location:" . htmlspecialchars($lokasi));

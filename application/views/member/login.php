@@ -416,7 +416,7 @@
                                     ?>
                                     <div class="form-group">
                                         <h2>LOGIN PESERTA PRAKERIN</h2>
-                                        <input name="username" typt="text" class="form-control" placeholder="username">
+                                        <input name="member_nip" typt="text" class="form-control" placeholder="NIPM">
                                         <input name="password" type="password" class="form-control" placeholder="Password">
                                         <?php if ($this->session->flashdata('failed')) { ?>
                                         <center><label><?php echo $this->session->flashdata('failed') ?></label></center>
@@ -450,6 +450,7 @@
                                             $inputAddress = set_value('member_address');
                                             $inputMentor = set_value('member_mentor');
                                             $inputDivison = set_value('member_division');
+                                            $inputEntry = set_value('member_entry_date');
                                             $inputStatus = set_value('member_status');
                                             ?>
                                             <label >Nama Lengkap *</label>
@@ -484,6 +485,8 @@
                                             <input type="text" name="member_mentor" placeholder="Pembimbing" class="form-control" value="<?php echo $inputMentor; ?>"><br>
                                             <label >No. Telepon *</label>
                                             <input type="text" name="member_phone" placeholder="No. Telepon" class="form-control" value="<?php echo $inputPhone; ?>"><br>
+                                            <label >Tanggal Mulai *</label>
+                                            <input type="text" name="member_entry_date" placeholder="Mulai Prakerin" class="form-control datepicker" value="<?php echo $inputEntry; ?>"><br>
                                             <label >Alamat </label>
                                             <textarea name="member_address" placeholder="Alamat" class="form-control"><?php echo $inputAddress; ?></textarea><br>
                                             <label >Departement </label>
