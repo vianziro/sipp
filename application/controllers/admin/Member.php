@@ -254,7 +254,7 @@ public function export() {
         foreach ($data['member'] as $row) {
             $csv[] = array( $i,
                 $row['member_nip'], $row['member_full_name'], $row['member_sex'] == 'MALE' ? 'Laki-laki' : 'Perempuan', $row['member_birth_place'], $row['member_birth_date'],
-				$row['member_school'], $row['member_mentor'], $row['member_phone'], $row['member_address'], $row['member_division'], $row['member_status'] == 0 ? 'Non-Aktif' : 'Aktif',
+                $row['member_school'], $row['member_mentor'], $row['member_phone'], $row['member_address'], $row['member_division'], $row['member_status'] == 0 ? 'Non-Aktif' : 'Aktif',
                 pretty_date($row['member_entry_date'], 'm/d/Y', FALSE)
             );
             $i++;
@@ -267,7 +267,7 @@ public function export() {
 
         array_to_csv($csv, 'Data_Peserta_Prakerin.csv');
     }
-
+   
 }
 
 /* End of file member.php */

@@ -64,7 +64,7 @@ class Member_model extends CI_Model {
         }
         else
         {
-            $this->db->order_by('member_last_update', 'desc');
+            $this->db->order_by('member_nip', 'desc');
         }
 
         $this->db->select('member.member_id, member_nip, username, password, member_full_name,
@@ -189,5 +189,6 @@ class Member_model extends CI_Model {
         $this->db->where('member_id', $id);
         $this->db->update('member', $params);
     }
+    
     
 }

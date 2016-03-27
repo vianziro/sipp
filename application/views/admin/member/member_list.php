@@ -11,11 +11,11 @@
         </span>
     </h3>       
 </h3>
-<div class="collapse" id="collapseExample">
+<div>
     <?php echo form_open(current_url(), array('method' => 'get')) ?>
     <div class="row">                
-        <div class="col-md-3">
-            <input type="text" name="n" placeholder="Nama" class="form-control">
+        <div class="col-md-3">                 
+            <input autofocus type="text" name="n" id="field" placeholder="Nama" class="form-control">            
         </div>                
         <input type="submit" class="btn btn-success" value="Cari">
     </div>
@@ -77,3 +77,59 @@
     </div>
 </div>
 </div>
+
+<script>
+    $(function() {
+
+        var member_list = [
+        <?php foreach ($member as $row): ?>
+        {
+                       
+            "label": "<?php echo $row['member_full_name'] ?>",
+            "label_nik": "<?php echo $row['member_nip'] ?>"
+
+        },
+    <?php endforeach; ?>
+    ];
+    function custom_source(request, response) {
+        var matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i");
+        response($.grep(member_list, function(value) {
+            return matcher.test(value.label)
+            || matcher.test(value.label_nik);
+        }));
+    }
+
+    $("#field").autocomplete({
+        source: custom_source,
+        minLength: 1,
+        select: function(event, ui) {
+                // feed hidden id field                
+                $("#field_id").val(ui.item.label_nik);  
+                $("#field_name").val(ui.item.value);                
+
+                // update number of returned rows
+            },
+            open: function(event, ui) {
+                // update number of returned rows
+                var len = $('.ui-autocomplete > li').length;
+            },
+            close: function(event, ui) {
+                // update number of returned rows
+            },
+            // mustMatch implementation
+            change: function(event, ui) {
+                if (ui.item === null) {
+                    $(this).val('');
+                    $('#field_id').val('');
+                }
+            }
+        });
+
+        // mustMatch (no value) implementation
+        $("#field").focusout(function() {
+            if ($("#field").val() === '') {
+                $('#field_id').val('');
+            }
+        });
+    });
+</script>
