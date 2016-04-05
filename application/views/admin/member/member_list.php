@@ -82,7 +82,7 @@
     $(function() {
 
         var member_list = [
-        <?php foreach ($member as $row): ?>
+        <?php foreach ($members as $row): ?>
         {
                        
             "label": "<?php echo $row['member_full_name'] ?>",

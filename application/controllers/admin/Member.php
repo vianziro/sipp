@@ -41,6 +41,7 @@ class Member extends CI_Controller {
         $params['limit'] = 10;
         $params['offset'] = $offset;
         $data['member'] = $this->Member_model->get($params);
+        $data['members'] = $this->Member_model->get();
 
         $config['per_page'] = 10;
         $config['uri_segment'] = 4;

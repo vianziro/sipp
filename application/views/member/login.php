@@ -334,16 +334,16 @@
                             <div class="form-group">
                                 <h2>PRESENSI</h2>
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <input autofocus="" name="nip" typt="text" class="form-control" placeholder="Scan NIPM Disini">
+                                    <div class="col-md-12">  
+                                    <input autofocus="" name="password" type="password" class="form-control" placeholder="Password">                                      
+                                        <input autofocus="" name="nip" type="password" class="form-control" placeholder="Scan NIPM Disini">
                                         <div class="radio">
                                             <label>
-                                                <input type="radio" name="desc" value="0" > Datang
-                                            </label>
-                                        </div>
-                                        <div class="radio">
+                                                <input type="radio" name="desc" value="0" ><strong> Datang  </strong>                                          
                                             <label>
-                                                <input type="radio" name="desc" value="1" > Pulang
+                                               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+                                            <input type="radio" name="desc" value="1" ><strong> Pulang </strong>
                                             </label>
                                         </div>
                                     </div>
@@ -525,7 +525,7 @@
                                                 <tbody>
                                                     <?php
                                                     $i = 1;											
-                                                    foreach ($member as $row):
+                                                    foreach ($member as $row): 
                                                         ?>
                                                     <tr>
                                                         <td><?php echo $i ?></td>

@@ -125,14 +125,15 @@ class Auth extends CI_Controller {
             $lokasi = NULL;
         }
         $this->form_validation->set_rules('nip', 'Nip', 'trim|required');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required');
         $this->form_validation->set_rules('desc', 'Keterangan', 'trim|required');
         if ($_POST AND $this->form_validation->run() == TRUE) {
             $nip = $this->input->post('nip', TRUE);
             $password = $this->input->post('password', TRUE);
             $desc = $this->input->post('desc', TRUE);
             $this->db->from('member');
-            $this->db->where('member_nip', $nip);
-            $this->db->where('member_status', TRUE);
+            $this->db->where('member_nip', $nip);            
+            $this->db->where('member_status', TRUE); 
             $query = $this->db->get();
 
             if ($query->num_rows() > 0) {

@@ -64,9 +64,7 @@ $inputEntry = $member['member_entry_date'];
                     <p style="color:#9C9C9C;margin-top: 5px"><i>*) Wajib diisi</i></p>
                 </div>
                 <div class="col-sm-9 col-md-3">
-                    <div class="form-group">
-                        <label >Upload Photo </label>
-                        <input type="file" name="member_image" class="form-control" ><br>
+                    <div class="form-group">                        
                         <?php if (isset($member) AND $member['member_image'] != NULL) { ?>
                         <img src="<?php echo upload_url('member_photo/' . pretty_date($member['member_input_date'], 'Y/m/d/', FALSE) . $member['member_image']) ?>" class="img-responsive ava-detail"><br>
                         <?php } ?>   
