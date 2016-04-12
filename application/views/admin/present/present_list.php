@@ -5,7 +5,7 @@
             Report Presensi
             <span class="pull-right">
                 <a class="btn btn-sm btn-default" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" ><span class="glyphicon glyphicon-align-justify"></span></a>
-                <a class="btn btn-sm btn-success" href="<?php echo site_url('admin/present/export' . '/?' . http_build_query($q)) ?>" ><span class="glyphicon glyphicon-print"></span></a>
+                <a class="btn btn-sm btn-success" href="<?php echo site_url('admin/present/export_excel' . '/?' . http_build_query($q)) ?>" ><span class="glyphicon glyphicon-print"></span></a>
 				
             </span>
         </h3>
