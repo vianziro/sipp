@@ -4,14 +4,14 @@
 <head>
 	
 	<script language="JavaScript">
-       var message="Maaf Dilarang Klik Kanan!!!! Trims";
-       function clickIE4(){
-           if (event.button==2){
-               alert(message);
-               return false;
-           }
-       }
-       function clickNS4(e){
+     var message="Maaf Dilarang Klik Kanan!!!! Trims";
+     function clickIE4(){
+         if (event.button==2){
+             alert(message);
+             return false;
+         }
+     }
+     function clickNS4(e){
         if (document.layers||document.getElementById&&!document.all){
             if (e.which==2||e.which==3){
                 alert(message);
@@ -35,7 +35,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Web Intranet HRA</title>
+<title>Intranet Human Resources Application</title>
 <link rel="icon" href="<?php echo media_url('ico/favicon.jpg'); ?>" type="image/x-icon">
 
 <!-- Bootstrap core CSS -->
@@ -169,65 +169,119 @@
     }   
 </script>
 
-</head>
+<script language="JavaScript" type="text/javascript">
+   $(document).ready(function(){
+
+         var imgArr = new Array( // relative paths of images
+           '<?php echo media_url() ?>/images/letter.png',
+           'images_intranet/2.jpg',
+           'images_intranet/3.jpg',
+           'images_intranet/4.jpg',
+           'images_intranet/5.jpg',
+           'images_intranet/6.jpg',
+           'images_intranet/7.jpg',
+           'images_intranet/8.jpg'
+           );
+
+         var preloadArr = new Array();
+         var i;
+
+         /* preload images */
+         for(i=0; i < imgArr.length; i++){
+           preloadArr[i] = new Image();
+           preloadArr[i].src = imgArr[i];
+       }
+
+       var currImg = 2;
+         //var intID = setInterval(changeImg, 10000);
+
+         /* image rotator */
+         function changeImg(){
+           $('.box_tengah').animate({opacity: 0}, 1000, function(){
+               $(this).css('background','url(' + preloadArr[currImg++%preloadArr.length].src +') top center no-repeat');
+           }).animate({opacity: 1}, 1000);
+       }
+
+   });
+</script>
 
 
-<body class="background">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <center>
-                    <h1><i class="fa fa-soundcloud"></i> INTRANET HUMAN CAPITAL SYSTEM <i class="fa fa-soundcloud"></i></h1>
-                </center>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
+<!--[if IE 6]>
+        <script src="DD_belatedPNG_0.0.8a-min.js"></script>
+        <script>
+         
+           DD_belatedPNG.fix('.x');
+          
+        </script>
+       
+       
+        <![endif]--> 
+    </head>
+    <body>
+
+        <div class="main_div">
+            <div class="box_tengah">
                 <marquee><h5><strong>Selamat Datang di Portal HRA | Silahkan Pilih Menu Yang Akan Digunakan | Untuk Bantuan Hubungi Personalia</strong></h5></marquee>
-            </div>
-        </div>
-        <br>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="row">
-                                <center>
-                                    <h2><strong><?php echo pretty_date(date('Y-m-d'), 'l, d F Y', FALSE) ?></strong></h2>
-                                    <div id="output"></h2></center>           
-                                    </div> 
-                                </div>           
-                            </div>
-                        </div>
-                    </div>
+                <div class="shortcut">
+                    <span>
+                        <a href="http://10.234.159.200/hras" target="_blank"> 
+                            <img class="x" src="<?php echo media_url() ?>/images/login_hracls2.png"/><br />
+                            <p class="label">HRA Application <br>Cileungsi 2</p>
+                        </a>
+                    </span>
+                </div>
+                <div class="shortcut">
+                    <span>
+                        <a href="http://10.234.159.200/cls" target="_blank"> 
+                            <img class="x" src="<?php echo media_url() ?>/images/login_hracls1.png"/><br />
+                            <p class="label">HRA Application <br>Cileungsi 1</p>
+                        </a>
+                    </span>
+                </div>
+
+                <div class="shortcut">
+                    <span>
+                        <a href="<?php echo site_url('member') ?>" target="_blank"> 
+                            <img class="x" src="<?php echo media_url() ?>/images/login_prakerin.png"/><br />
+                            <p class="label">Prakerin Sekolah</p>
+                        </a>
+                    </span>
+                </div>
+               
+                <div class="shortcut">
+                    <span>
+                        <a href="http://10.234.152.108" target="_blank"> 
+                            <img class="x" src="<?php echo media_url() ?>/images/app.png"/><br />
+                            <p class="label">Profil Individu</p>
+                        </a>
+                    </span>
+                </div>
+
+                <div class="shortcut">
+                    <span>
+                        <a href="http://alearning.sat.co.id/alfaweb/public/index/login" target="_blank"> 
+                            <img class="x" src="<?php echo media_url() ?>/images/login_learning.png"/><br />
+                            <p class="label">A-Learning</p>
+                        </a>
+                    </span>
+                </div>
+
+                <div class="shortcut">
+                    <span>
+                        <a href="http://10.234.152.20:2208" target="_blank"> 
+                            <img class="x" src="<?php echo media_url() ?>/images/login_online.png"/><br />
+                            <p class="label">AlfaOnline</p>
+                        </a>
+                    </span>
                 </div>
             </div>
         </div>
-    </div>
-    <br><br><br>
-    <center>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                 <a target="_blank" href="http://10.234.159.200/hras"><img width="100" height="92" src="<?php echo media_url() ?>/images/letter.png" alt=""></a>
-                 <h3 class="center"><strong>HRA Application</strong></h3>                                
-             </div>           
-             <div class="col-lg-1">
-                <a target="_blank" href="<?php echo site_url('member') ?>"><img width="100" height="92" src="<?php echo media_url() ?>/images/caln.png" alt=""></a>
-                <h3 class="center"><strong>Prakerin</strong></h3></div></div></div></center>     
-
-                <br><br><br><br><br><br><br><center>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h3>PT. Sumber Alfaria Trijaya, Tbk <i onClick="initialize()" class="fa fa-cube"></i></h3>
-                            <address>
-                              Kawasan Industri Menara Permai Kav. 18 Cileungsi<br/>
-                              Copyright &copy; <?php echo pretty_date(date('Y-m-d'), 'Y', FALSE) ?> Achyar Anshorie&trade;<br/>
-                          </address></center>
-                      </div>
-
-                  </body>
-
-                  </html>
+        <div class="footer2">
+            <h4>PT. Sumber Alfaria Trijaya, Tbk</h4>
+            <address>
+              Kawasan Industri Menara Permai Kav. 18 Cileungsi<br/>
+              Copyright &copy; <?php echo pretty_date(date('Y-m-d'), 'Y', FALSE) ?> | Achyar Anshorie&trade;<br/>
+          </address>
+      </div>
+  </body>
+  </html>

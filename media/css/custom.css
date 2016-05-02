@@ -6501,3 +6501,99 @@ ul.notifications {
     background: linear-gradient(135deg, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
+
+.logo{margin-top:30px}
+.box_tengah{
+    position: absolute; 
+    color:#050505;
+    top: 50%;
+    left: 50%;
+    margin-top: -256px;
+    margin-left: -479px;    
+    width:958px;
+    height:512px;
+    border:1px solid #d0d9dd;
+    background:url(../images/port.jpg) no-repeat;
+    }
+.main_div{margin-top:10px;vertical-align:middle}    
+.title{ 
+font-family:Arial, Helvetica, sans-serif;
+font-size:15px;
+color:#FFF;
+padding:3px
+}
+    
+
+.footer{
+    
+    display: inline;
+    
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:13px;
+    text-align:center;
+    
+}
+
+.footer2{
+        position: absolute; 
+    top: 68%;
+    left: 38%;
+    color:#050505;
+    text-align:center;
+    
+      
+    }
+
+
+.shortcut{
+    width:130px;margin:50px; text-align:center; float:left; 
+    }
+
+.shortcut .icon{
+    width:48px;
+    height:48px;
+    padding:2px;
+    
+}
+
+.shortcut .icon img{
+    width:48px;
+    height:48px;
+}
+.shortcut .label{
+    width:247px;
+    padding:14px 2px 8px 5px;
+    color:#050505;
+    font-size:12px;
+    height:48px;
+    display: inline
+}
+
+.shortcut a{
+    color:#FFF;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    text-decoration:none;
+}
+
+.shortcut a:visited{
+    color:#FFF;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    text-decoration:none;
+}
+
+.shortcut a:hover{
+    color:#ffb505;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    text-decoration:none;
+}
+.shortcut a img,.shortcut a:visited img{
+border:0px
+}
+
+.shortcut a:hover img{
+   padding:1px;
+   border:1px solid #FFF;
+}

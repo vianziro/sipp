@@ -273,9 +273,7 @@
                         <ul> 						
                           <div class="row">
                             <div class="modal-dialog modal-sm">						
-                              <center>
-                                <a href="<?php echo site_url('admin/') ?>" class="btn btn-small btn-info" type="button">Login Administrator</a>
-                            </center>
+                              
                         </ul>
                     </div>
                 </div>
