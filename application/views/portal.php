@@ -46,7 +46,7 @@
 <link href="<?php echo media_url() ?>/css/animate.min.css" rel="stylesheet">
 
 <!-- Custom styling plus plugins -->
-<link href="<?php echo media_url() ?>/css/custom.css" rel="stylesheet">
+<link href="<?php echo media_url() ?>/css/portal.css" rel="stylesheet">
 
 <script src="<?php echo media_url() ?>/js/jquery.min.js"></script>
 <script src="<?php echo media_url() ?>/js/bootstrap.min.js"></script>
@@ -169,119 +169,99 @@
     }   
 </script>
 
-<script language="JavaScript" type="text/javascript">
-   $(document).ready(function(){
-
-         var imgArr = new Array( // relative paths of images
-           '<?php echo media_url() ?>/images/letter.png',
-           'images_intranet/2.jpg',
-           'images_intranet/3.jpg',
-           'images_intranet/4.jpg',
-           'images_intranet/5.jpg',
-           'images_intranet/6.jpg',
-           'images_intranet/7.jpg',
-           'images_intranet/8.jpg'
-           );
-
-         var preloadArr = new Array();
-         var i;
-
-         /* preload images */
-         for(i=0; i < imgArr.length; i++){
-           preloadArr[i] = new Image();
-           preloadArr[i].src = imgArr[i];
-       }
-
-       var currImg = 2;
-         //var intID = setInterval(changeImg, 10000);
-
-         /* image rotator */
-         function changeImg(){
-           $('.box_tengah').animate({opacity: 0}, 1000, function(){
-               $(this).css('background','url(' + preloadArr[currImg++%preloadArr.length].src +') top center no-repeat');
-           }).animate({opacity: 1}, 1000);
-       }
-
-   });
-</script>
+<style type="text/css">
+body {
+  font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+  background-image: url('../images/portal/Wednesday.jpg');
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+</style>
 
 
-<!--[if IE 6]>
-        <script src="DD_belatedPNG_0.0.8a-min.js"></script>
-        <script>
-         
-           DD_belatedPNG.fix('.x');
-          
-        </script>
-       
-       
-        <![endif]--> 
     </head>
-    <body>
+<body class="background">
+    <div class="container">
+<img src="<?php echo media_url() ?>/images/portal/alfamartlogo.png" class="x" name="insert_logo" width="200px" height="90px" style="display:block;" />
+  <div class="content">
 
-        <div class="main_div">
-            <div class="box_tengah">
-                <marquee><h5><strong>Selamat Datang di Portal HRA | Silahkan Pilih Menu Yang Akan Digunakan | Untuk Bantuan Hubungi Personalia</strong></h5></marquee>
-                <div class="shortcut">
-                    <span>
-                        <a href="http://10.234.159.200/hras" target="_blank"> 
-                            <img class="x" src="<?php echo media_url() ?>/images/login_hracls2.png"/><br />
-                            <p class="label">HRA Application <br>Cileungsi 2</p>
-                        </a>
-                    </span>
-                </div>
-                <div class="shortcut">
-                    <span>
-                        <a href="http://10.234.159.200/cls" target="_blank"> 
-                            <img class="x" src="<?php echo media_url() ?>/images/login_hracls1.png"/><br />
-                            <p class="label">HRA Application <br>Cileungsi 1</p>
-                        </a>
-                    </span>
-                </div>
-
-                <div class="shortcut">
-                    <span>
-                        <a href="<?php echo site_url('member') ?>" target="_blank"> 
-                            <img class="x" src="<?php echo media_url() ?>/images/login_prakerin.png"/><br />
-                            <p class="label">Prakerin Sekolah</p>
-                        </a>
-                    </span>
-                </div>
-               
-                <div class="shortcut">
-                    <span>
-                        <a href="http://10.234.152.108" target="_blank"> 
-                            <img class="x" src="<?php echo media_url() ?>/images/app.png"/><br />
-                            <p class="label">Profil Individu</p>
-                        </a>
-                    </span>
-                </div>
-
-                <div class="shortcut">
-                    <span>
-                        <a href="http://alearning.sat.co.id/alfaweb/public/index/login" target="_blank"> 
-                            <img class="x" src="<?php echo media_url() ?>/images/login_learning.png"/><br />
-                            <p class="label">A-Learning</p>
-                        </a>
-                    </span>
-                </div>
-
-                <div class="shortcut">
-                    <span>
-                        <a href="http://10.234.152.20:2208" target="_blank"> 
-                            <img class="x" src="<?php echo media_url() ?>/images/login_online.png"/><br />
-                            <p class="label">AlfaOnline</p>
-                        </a>
-                    </span>
-                </div>
-            </div>
+  <div class="img" align="center">
+      <a href="http://10.234.159.200/hras" target="_blank">
+        <div class="grow pic">
+      <img src="<?php echo media_url() ?>/images/portal/hras_cls2.png" class="x">
         </div>
-        <div class="footer2">
-            <h4>PT. Sumber Alfaria Trijaya, Tbk</h4>
-            <address>
-              Kawasan Industri Menara Permai Kav. 18 Cileungsi<br/>
-              Copyright &copy; <?php echo pretty_date(date('Y-m-d'), 'Y', FALSE) ?> | Achyar Anshorie&trade;<br/>
-          </address>
-      </div>
-  </body>
-  </html>
+      <div class="desc">HRA Application CLS 2</div>
+        </a>
+  </div>
+  
+  <div class="img" align="center">
+      <a href="http://10.234.159.200/cls" target="_blank">
+        <div class="grow pic">
+      <img src="<?php echo media_url() ?>/images/portal/hras_cls1.png" class="x">
+        </div>
+      <div class="desc">HRA Application CLS 1</div>
+        </a>
+  </div>
+  
+  <div class="img" align="center">
+      <a href="<?php echo site_url('member') ?>" target="_blank">
+        <div class="grow pic">
+      <img src="<?php echo media_url() ?>/images/portal/prk.png" class="x">
+        </div>
+      <div class="desc">Prakerin Sekolah</div>
+        </a>
+  </div>
+  
+  <div class="img" align="center">
+      <a href="http://10.234.152.108" target="_blank">
+        <div class="grow pic">
+      <img src="<?php echo media_url() ?>/images/portal/hc_portal.png" class="x">
+        </div>
+      <div class="desc">Human Capital</div>
+        </a>
+  </div>
+
+  <div class="img" align="center">
+      <a href="http://alearning.sat.co.id/alfaweb/public/index/login" target="_blank">
+        <div class="grow pic">
+      <img src="<?php echo media_url() ?>/images/portal/a_learning.png" class="x">
+        </div>
+      <div class="desc">A Learning</div>
+        </a>
+  </div>
+
+
+  <div class="img" align="center">
+      <a href="http://10.234.152.20/bbm/public/" target="_blank">
+        <div class="grow pic">
+      <img src="<?php echo media_url() ?>/images/portal/bbm_icon.png" class="x">
+        </div>
+      <div class="desc">BBM Online</div>
+        </a>
+  </div>
+  
+  <div class="img" align="center">
+      <a href="http://10.234.152.90:8000/sop" target="_blank">
+        <div class="grow pic">
+      <img src="<?php echo media_url() ?>/images/portal/sop.png" class="x">
+        </div>
+      <div class="desc">SOP Online</div>
+        </a>
+  </div>
+  
+  <div class="img" align="center">
+      <a href="http://10.234.152.20/koperasi/public/" target="_blank">
+        <div class="grow pic">
+      <img src="<?php echo media_url() ?>/images/portal/koperasi.png" class="x">
+        </div>
+      <div class="desc">Koperasi Online</div>
+        </a>
+  </div>
+  
+  <!-- asdasd -->
+
+    <!-- end .content --></div>
+  <!-- end .container --></div>
+</body>
+</html>

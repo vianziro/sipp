@@ -26,7 +26,7 @@
                                  
             <p align="center"><font size="5"><strong><u>SURAT KETERANGAN MAGANG</u></strong></font><br>
             No : 0<?php echo substr($member['member_nip'],3) ?> / <?php echo pretty_date($member['member_last_update'],'F',false)?> / <?php echo pretty_date($member['member_last_update'],'Y',false)?> / Pemagangan / Siswa Sekolah / SAT</p>          
-			<br>
+            <br>
             <p align="justify"> Mengucapkan terimakasih kepada :</p><br>
 
             <table border="0">
@@ -84,10 +84,10 @@
                     </tr>
                   </tbody></table>
     </div>
-	<br><br>
-	<span class="style10"><br>
-	</span>
-	<p class="style10">&nbsp;</p>
-	<p class="style10">No. NRA : SAT/FRM/PI/147_Rev : 000_120410</p>
+    <br><br>
+    <span class="style10"><br>
+    </span>
+    <p class="style10">&nbsp;</p>
+    <p class="style10">No. NRA : SAT/FRM/PI/147_Rev : 000_120410</p>
     </body>
 </html>
