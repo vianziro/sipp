@@ -28,6 +28,13 @@
                 </ul>
             </li>
 
+            <li><a><i class="fa fa-envelope"></i> Surat Keterangan <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu" style="display: none">
+                    <li><a href="<?php echo site_url('admin/sk') ?>">Daftar Surat Keterangan</a>
+                    </li>                   
+                </ul>
+            </li>
+
             <li><a><i class="fa fa-newspaper-o"></i> Posting Berita <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu" style="display: none">
                     <li><a href="<?php echo site_url('admin/posts') ?>">Daftar Posting</a>
